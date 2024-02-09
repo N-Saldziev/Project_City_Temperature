@@ -166,12 +166,34 @@
 
 
 <router-outlet>
-  <div style="border: solid 5px #0000ff;">This is the main program :D</div>
+  <!-- <table id="places">
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col}}
+      </th>
+    </tr>
+    <tr *ngFor="let citie of cities">
+      <td *ngFor="let col of index">
+        {{user[col]}}
+      </td>
+    </tr>
+  </table> -->
+  <table>
+    <tr>
+      <td>
+        <p>One lane</p>
+      </td>
+    </tr>
+  </table>
+</router-outlet>
+<app-list-place></app-list-place>
+
+  <!-- <div style="border: solid 5px #0000ff;">This is the main program :D</div>
   <br><br><br>
-<h1>This is the Tempreture for each City in each Country</h1>
+<h1>This is the Tempreture for each City in each Country</h1> -->
 
 <!-- <app-author-filter [nationalities]="nationalities"></app-author-filter> -->
-  <br><br><br>
+<!--  <br><br><br>
   <div class="main">
   <div class="main">City <span id="City_HTML">sort</span></div>
   <div class="main">Contry <span id="Contry_HTML">sort</span></div>
@@ -195,9 +217,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 <!-- <div id="author-container">
  <app-author-row *ngFor="let currentAuthor of authors" [author]="currentAuthor"></app-author-row>
 </div> -->
-
-</router-outlet>
