@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 // import { HeaderComponent } from './header/header.component';
 // import { AuthorListComponent } from './author-list/author-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
         // AuthorListComponent
     ],
     imports: [
+        HttpClientModule,
         BrowserModule,
         AppRoutingModule
     ],

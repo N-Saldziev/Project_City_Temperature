@@ -1,18 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { citie } from '../app/Model/places';
+import { citieAPI } from '../app/Model/Api';
+import { toCitie } from './Model/mapping';
+import { BehaviorSubject, map, tap } from 'rxjs';
+
+const BASE_URL = 'http://localhost:3000/'
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
 
+  private citieSubject$ = new BehaviorSubject<citie[]>([]);
+
   constructor(private http : HttpClient) {}
 
   url : string = "http://localhost:3000/Places/"
 
   getCitie(){
-    return this.http.get<citie[]>(this.url);
+    return this.http.get<citieAPI[]>(`${BASE_URL}/palces`).pipe(
+      map(citie => citie.map(citieAPI => toCitie(citieAPI))),
+      tap(citie => this.citieSubject$.next(citie)),
+      
+    );
   }
 
 }

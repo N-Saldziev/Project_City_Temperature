@@ -1,1 +1,20 @@
 <p>list-place works! and its coponent</p>
+<table>
+    <thead>
+        <tr>
+            <th>Citie</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th *ngFor="let citie of cities">
+            <td>{{ citie.city }}</td>
+            <td>{{ citie.country }}</td>
+            <td>
+                <button (click)="editCitie(citie)">Edit</button>
+                <button (click)="viewCitie(citie)">View</button>
+                <button (click)="deleteCitie(citie)">Delete</button>
+            </td>
+        </th>
+    </tbody>
+</table>
